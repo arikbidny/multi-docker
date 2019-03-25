@@ -2,28 +2,27 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "memoryReservation": 256,
             "name": "client",
             "image": "arikbi/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
-            "memoryReservation": 256,
             "name": "server",
             "image": "arikbi/multi-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
-            "memoryReservation": 256,
             "name": "worker",
             "image": "arikbi/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
-            "memoryReservation": 256,
             "name": "nginx",
             "image": "arikbi/multi-nginx",
             "hostname": "nginx",
@@ -37,7 +36,8 @@
             "links": [
                 "client",
                 "server"
-            ]
+            ],
+            "memory": 128
         }
     ]
 }
